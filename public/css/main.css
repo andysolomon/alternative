@@ -1,0 +1,491 @@
+@charset "UTF-8";
+/* line 17, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/*------------------------------------*\
+ *    $CSSWIZARDRY-GRIDS
+ *\*------------------------------------ */
+/*
+ * CONTENTS
+ * INTRODUCTION.........How the grid system works.
+ * VARIABLES............Your settings.
+ * MIXINS...............Library mixins.
+ * GRID SETUP...........Build the grid structure.
+ * WIDTHS...............Build our responsive widths around our breakpoints.
+ * PUSH.................Push classes.
+ * PULL.................Pull classes. */
+/*------------------------------------*\
+ *    $INTRODUCTION
+ *\*------------------------------------ */
+/*
+ * csswizardry grids provides you with widths to suit a number of breakpoints
+ * designed around devices of a size you specify. Out of the box, csswizardry
+ * grids caters to the following types of device:
+ *
+ * palm     --  palm-based devices, like phones and small tablets
+ * lap      --  lap-based devices, like iPads or laptops
+ * portable --  all of the above
+ * desk     --  stationary devices, like desktop computers
+ * regular  --  any/all types of device
+ *
+ * These namespaces are then used in the library to give you the ability to
+ * manipulate your layouts based around them, for example:
+ *
+ * <div class="grid__item  one-whole  lap--one-half  desk--one-third">
+ *
+ * This would give you a grid item which is 100% width unless it is on a lap
+ * device, at which point it become 50% wide, or it is on a desktop device, at
+ * which point it becomes 33.333% width.
+ *
+ * csswizardry grids also has push and pull classes which allow you to nudge
+ * grid items left and right by a defined amount. These follow the same naming
+ * convention as above, but are prepended by either `push--` or `pull--`, for
+ * example:
+ *
+ * `class="grid__item  one-half  push--one-half"`
+ *
+ * This would give you a grid item which is 50% width and pushed over to the
+ * right by 50%.
+ *
+ * All classes in csswizardry grids follow this patten, so you should fairly
+ * quickly be able to piece together any combinations you can imagine, for
+ * example:
+ *
+ * `class="grid__item  one-whole  lap--one-half  desk--one-third  push--desk--one-third"`
+ *
+ * `class="grid__item  one-quarter  palm--one-half  push--palm--one-half"`
+ *
+ * `class="grid__item  palm--one-third  desk--five-twelfths"` */
+/*------------------------------------*\
+ *    $VARIABLES
+ *\*------------------------------------ */
+/*
+ * If you are building a non-responsive site but would still like to use
+ * csswizardry-grids, set this to ‘false’: */
+/*
+ * Is this build mobile first? Setting to ‘true’ means that all grids will be
+ * 100% width if you do not apply a more specific class to them. */
+/*
+ * Set the spacing between your grid items. */
+/*
+ * Would you like Sass’ silent classes, or regular CSS classes? */
+/*
+ * Would you like push and pull classes enabled? */
+/*
+ * Using `inline-block` means that the grid items need their whitespace removing
+ * in order for them to work correctly. Set the following to true if you are
+ * going to achieve this by manually removing/commenting out any whitespace in
+ * your HTML yourself.
+ *
+ * Setting this to false invokes a hack which cannot always be guaranteed,
+ * please see the following for more detail:
+ *
+ * github.com/csswizardry/csswizardry-grids/commit/744d4b23c9d2b77d605b5991e54a397df72e0688
+ * github.com/csswizardry/inuit.css/issues/170#issuecomment-14859371 */
+/*
+ * Define your breakpoints. The first value is the prefix that shall be used for
+ * your classes (e.g. `.palm--one-half`), the second value is the media query
+ * that the breakpoint fires at.
+ *
+ * // palm     480 / 16 = 30em
+ * // lap(min) 481 / 16 = 30.0625em
+ * // lap(max) 1023 / 16 = 73.6501079914em
+ * // portable 1023 / 16 = 63.9375em
+ * // desk     1024 / 16 = 64em */
+/*
+ * Define which namespaced breakpoints you would like to generate for each of
+ * widths, push and pull. This is handy if you only need pull on, say, desk, or
+ * you only need a new width breakpoint at mobile sizes. It allows you to only
+ * compile as much CSS as you need. All are turned on by default, but you can
+ * add and remove breakpoints at will.
+ *
+ * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
+ * have been set to ‘true’. */
+/*
+ * You do not need to edit anything from this line onward; csswizardry-grids is
+ * good to go. Happy griddin’! */
+/*------------------------------------*\
+ *    $MIXINS
+ *\*------------------------------------ */
+/*
+ * These mixins are for the library to use only, you should not need to modify
+ * them at all.
+ *
+ * Enclose a block of code with a media query as named in `$breakpoints`. */
+/*
+ * Drop relative positioning into silent classes which can’t take advantage of
+ * the `[class*="push--"]` and `[class*="pull--"]` selectors. */
+/*------------------------------------*\
+ *    $GRID SETUP
+ *\*------------------------------------ */
+/*
+ * 1. Allow the grid system to be used on lists.
+ * 2. Remove any margins and paddings that might affect the grid system.
+ * 3. Apply a negative `margin-left` to negate the columns’ gutters. */
+/* line 164, ../../html/sass/_grids.sass */
+.homepage {
+  list-style: none;
+  /* [1] */
+  margin: 0;
+  /* [2] */
+  padding: 0;
+  /* [2] */
+  margin-left: 0px;
+  /* [3] */
+}
+
+/*
+ * 1. Cause columns to stack side-by-side.
+ * 2. Space columns apart.
+ * 3. Align columns to the tops of each other.
+ * 4. Full-width unless told to behave otherwise.
+ * 5. Required to combine fluid widths and fixed gutters. */
+/*
+ * Reversed grids allow you to structure your source in the opposite order to
+ * how your rendered layout will appear. */
+/*
+ * Gutterless grids have all the properties of regular grids, minus any spacing. */
+/*
+ * Align the entire grid to the right. */
+/*
+ * Centered grids align grid items centrally without needing to use push or pull
+ * classes. */
+/*------------------------------------*\
+ *    $WIDTHS
+ *\*------------------------------------ */
+/*
+ * Create our width classes, prefixed by the specified namespace. */
+/*
+ * Our regular, non-responsive width classes. */
+/*
+ * Whole */
+/* line 252, ../../html/sass/_grids.sass */
+.homepage, .mod, .mod1__image {
+  width: 100%;
+}
+
+/*
+ * Halves */
+/*
+ * Thirds */
+/*
+ * Quarters */
+/*
+ * Fifths */
+/*
+ * Sixths */
+/*
+ * Eighths */
+/*
+ * Tenths */
+/*
+ * Twelfths */
+/*
+ * Our responsive classes, if we have enabled them. */
+@media only screen and (max-width: 22em) {
+  /*
+   * Whole */
+  /*
+   * Halves */
+  /*
+   * Thirds */
+  /*
+   * Quarters */
+  /*
+   * Fifths */
+  /*
+   * Sixths */
+  /*
+   * Eighths */
+  /*
+   * Tenths */
+  /*
+   * Twelfths */
+}
+@media only screen and (min-width: 34em) {
+  /*
+   * Whole */
+  /*
+   * Halves */
+  /*
+   * Thirds */
+  /*
+   * Quarters */
+  /*
+   * Fifths */
+  /*
+   * Sixths */
+  /*
+   * Eighths */
+  /*
+   * Tenths */
+  /*
+   * Twelfths */
+}
+@media only screen and (min-width: 51em) {
+  /*
+   * Whole */
+  /*
+   * Halves */
+  /*
+   * Thirds */
+  /*
+   * Quarters */
+  /*
+   * Fifths */
+  /*
+   * Sixths */
+  /*
+   * Eighths */
+  /*
+   * Tenths */
+  /*
+   * Twelfths */
+}
+/*------------------------------------*\
+ *    $PUSH
+ *\*------------------------------------ */
+/*
+ * Push classes, to move grid items over to the right by certain amounts. */
+/*
+ * Not a particularly great selector, but the DRYest way to do things. */
+/* line 504, ../../html/sass/_grids.sass */
+[class*="push--"] {
+  position: relative;
+}
+
+/*
+ * Whole */
+/*
+ * Halves */
+/*
+ * Thirds */
+/*
+ * Quarters */
+/*
+ * Fifths */
+/*
+ * Sixths */
+/*
+ * Eighths */
+/*
+ * Tenths */
+/*
+ * Twelfths */
+@media only screen and (max-width: 22em) {
+  /*
+   * Whole */
+  /*
+   * Halves */
+  /*
+   * Thirds */
+  /*
+   * Quarters */
+  /*
+   * Fifths */
+  /*
+   * Sixths */
+  /*
+   * Eighths */
+  /*
+   * Tenths */
+  /*
+   * Twelfths */
+}
+@media only screen and (min-width: 34em) {
+  /*
+   * Whole */
+  /*
+   * Halves */
+  /*
+   * Thirds */
+  /*
+   * Quarters */
+  /*
+   * Fifths */
+  /*
+   * Sixths */
+  /*
+   * Eighths */
+  /*
+   * Tenths */
+  /*
+   * Twelfths */
+}
+@media only screen and (min-width: 51em) {
+  /*
+   * Whole */
+  /*
+   * Halves */
+  /*
+   * Thirds */
+  /*
+   * Quarters */
+  /*
+   * Fifths */
+  /*
+   * Sixths */
+  /*
+   * Eighths */
+  /*
+   * Tenths */
+  /*
+   * Twelfths */
+}
+/*------------------------------------*\
+ *    $PULL
+ *\*------------------------------------ */
+/*
+ * Pull classes, to move grid items back to the left by certain amounts. */
+/* line 5, ../../html/sass/main.sass */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 61, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+* html {
+  font-size: 100%;
+}
+
+/* line 64, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+html {
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+/* line 27, ../../html/sass/main.sass */
+body {
+  font-family: "Apercu";
+}
+
+/* line 30, ../../html/sass/main.sass */
+.homepage {
+  margin: 0 auto;
+}
+@media (min-width: 64em) {
+  /* line 30, ../../html/sass/main.sass */
+  .homepage {
+    width: 64em;
+  }
+}
+
+/* line 37, ../../html/sass/main.sass */
+.mod {
+  position: relative;
+  background-color: #949690;
+  height: 100%;
+  border-bottom-style: solid;
+  border-bottom-width: 0.0625em;
+  padding-bottom: 1.4375em;
+  padding-bottom: 0;
+  border-color: white;
+  display: table;
+}
+/* line 46, ../../html/sass/main.sass */
+.mod:nth-child(even) {
+  background-color: #a7a9a2;
+}
+
+/* line 49, ../../html/sass/main.sass */
+.mod__title, .mod1 .play-video {
+  font-size: 1.5em;
+  letter-spacing: 0.15em;
+  display: table-cell;
+  vertical-align: middle;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* line 62, ../../html/sass/main.sass */
+.mod1 .play-video {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+/* line 67, ../../html/sass/main.sass */
+.mod1 .play-video:after {
+  content: url("https://images-na.ssl-images-amazon.com/images/I/21FenRrW5mL.png");
+}
+
+/* line 70, ../../html/sass/main.sass */
+.mod1__image {
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 0;
+  background-image: url("https://images-na.ssl-images-amazon.com/images/I/A1TbrToIIAL.png");
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+
+/* line 82, ../../html/sass/main.sass */
+.fitvid {
+  height: 100%;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}

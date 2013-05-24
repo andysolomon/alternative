@@ -1,0 +1,85 @@
+@import compass/reset
+@import compass
+@import grids
+
+*
+  +box-sizing(border-box)
+
+// convert pixels to ems
+@function em($pixels, $context: $base-font-size)
+  @return #{$pixels / $context}em
+
+$base-font-size: 16px
+$base-line-height: 24px
++establish-baseline
+
+=breakpoint($point)
+  @if $point == desk
+    @media (min-width: 64em)
+      @content
+  @else if $point == portable
+    @media (min-width: 34em)
+      @content
+  @else if $point == palm
+    @media (max-width: 30em)
+      @content
+
+body
+  font-family: "Apercu"
+
+.homepage
+  @extend %grid
+  margin: 0 auto
+  @extend %one-whole
+  +breakpoint(desk)
+    width: em(1024px)
+
+.mod
+  @extend %one-whole
+  position: relative
+  background-color: rgba(148,150,144, 1)
+  height: 100%
+  +trailing-border(1px)
+  padding-bottom: 0
+  border-color: #fff
+  display: table
+  &:nth-child(even)
+    background-color: rgba(167,169,162, 1)
+
+%vertical--center
+  font-size: 1.5em
+  letter-spacing: .15em
+  display: table-cell
+  vertical-align: middle
+  color: #fff
+  text-align: center
+  text-transform: uppercase
+
+.mod__title
+  @extend %vertical--center
+
+.mod1
+  .play-video
+    position: relative
+    z-index: 1
+    cursor: pointer
+    @extend %vertical--center
+    &:after
+      content: url("https://images-na.ssl-images-amazon.com/images/I/21FenRrW5mL.png")
+
+.mod1__image
+  left: 0
+  top: 0
+  @extend %one-whole
+  position: absolute
+  z-index: 0
+  background:
+    image: url("https://images-na.ssl-images-amazon.com/images/I/A1TbrToIIAL.png")
+    repeat: no-repeat
+    position: top left
+
+
+.fitvid
+  height: 100%
+  padding-top: 2em
+  padding-bottom: 2em
