@@ -514,7 +514,7 @@ body {
 @media (min-width: 96em) {
   /* line 45, ../../html/sass/main.sass */
   .homepage {
-    width: 80em;
+    width: 77em;
   }
 }
 @media (min-width: 120em) {
@@ -535,18 +535,18 @@ body {
   border-color: white;
   display: table;
 }
-/* line 68, ../../html/sass/main.sass */
+/* line 67, ../../html/sass/main.sass */
 .mod:nth-child(even) {
   background-color: #a7a9a2;
 }
 
-/* line 74, ../../html/sass/main.sass */
+/* line 73, ../../html/sass/main.sass */
 .mod1__image {
   position: absolute;
   z-index: 1;
 }
 
-/* line 78, ../../html/sass/main.sass */
+/* line 77, ../../html/sass/main.sass */
 .mod1__video {
   margin-left: 5em;
   margin-right: 5em;
@@ -554,31 +554,80 @@ body {
   margin-top: 2em;
 }
 
-/* line 84, ../../html/sass/main.sass */
+/* line 83, ../../html/sass/main.sass */
 .mod--hidden {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
 
-/* line 87, ../../html/sass/main.sass */
+/* line 86, ../../html/sass/main.sass */
 .img {
   max-width: 100%;
   height: auto !important;
 }
 
-/* line 91, ../../html/sass/main.sass */
+/* line 90, ../../html/sass/main.sass */
 .fitvid {
   height: 100%;
 }
 
-/* line 94, ../../html/sass/main.sass */
+/* line 93, ../../html/sass/main.sass */
 .video-overlay {
   background: black;
   z-index: 0;
 }
 
-/* line 98, ../../html/sass/main.sass */
+/* line 97, ../../html/sass/main.sass */
 .image-overlay {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
+}
+
+/* line 100, ../../html/sass/main.sass */
+.grid {
+  overflow: hidden;
+  padding: 0.5em 0 0 0.5em;
+  max-width: 76em;
+  margin: 0 auto;
+}
+/* line 105, ../../html/sass/main.sass */
+.grid li {
+  padding: 0 0.5em 0.5em 0;
+}
+/* line 107, ../../html/sass/main.sass */
+.grid li > div {
+  background: gray;
+  text-align: center;
+}
+/* line 111, ../../html/sass/main.sass */
+.grid li a {
+  color: white;
+}
+
+@media all and (min-width: 27em) {
+  /* line 115, ../../html/sass/main.sass */
+  .grid li {
+    width: 50%;
+    float: left;
+  }
+}
+@media all and (min-width: 40em) {
+  /* line 120, ../../html/sass/main.sass */
+  .grid li {
+    width: 33.33333%;
+  }
+  /* line 122, ../../html/sass/main.sass */
+  .grid li.wide {
+    width: 66.66667%;
+  }
+}
+@media all and (min-width: 60em) {
+  /* line 126, ../../html/sass/main.sass */
+  .grid li {
+    width: 20%;
+  }
+  /* line 128, ../../html/sass/main.sass */
+  .grid li.wide {
+    width: 50%;
+  }
 }

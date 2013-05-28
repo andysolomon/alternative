@@ -30,9 +30,12 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="mod mod2 commonthread">
-		<p class="mod__title">Common Thread</p>
+		<section id="pattern" class="pattern">
+		</section>
 	</section>
+
 	<section class="mod mod3 grantsprogram">
 		<p class="mod__title">Grants Program</p>
 	</section>
@@ -52,9 +55,21 @@
 		CLICK ME!
 	</div>
 </div>
-
+	<script id="Handlebars-Template" type="text/x-handlebars-template">
+	<ul class="grid">
+		{{#each instagrams}}
+		<li>
+			<div>
+				<img class="img" src="{{this}}"/>
+			</div>
+		</li>
+		{{/each}}
+	</ul>
+	</script>
+</body>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0-rc.4/handlebars.min.js"></script>
 <script src="js/instafeed.js"></script>
 <script src="js/magnific-popup.js"></script>
 <script src="js/main.js"></script>
@@ -80,24 +95,70 @@ $(document).ready(function(){
 		});
 	});
 
-	$("#instafeed").on("click", function(){
+	(function(){
+		var commonthreadArray = [];
+		var instagramArray = [];
+		var Source = document.getElementById("Handlebars-Template").textContent;
+		var Template = Handlebars.compile(Source);
 
-		var jqxhr = $.getJSON('https://api.instagram.com/v1/users/20039202/media/recent/?access_token=34925449.f59def8.d3155ae948414c6e81d88de5a3bd7a16&callback=?', function(data) {
-			console.log(data.data);
+		// Handle Ajax call to Instagram API
+		var instagram__jqxhr = $.getJSON('https://api.instagram.com/v1/users/20039202/media/recent?count=10&access_token=34925449.f59def8.d3155ae948414c6e81d88de5a3bd7a16&callback=?', function(data) {
 			var instagramObject = data.data;
 			$.each( instagramObject, function( i, item ) {
-				console.log( item.images.standard_resolution.url );
+				instagramImage = item.images.standard_resolution.url;
+				instagramArray.push(instagramImage);
 			});
 		})
-		.done(function() {console.log( "second success" ); })
-		.fail(function() {console.log( "FAIL!" ); })
-		.always(function() {console.log( "Always Execute" ); });
+		.done(function() {console.log( "Instagram Has successfully loaded!" ); })
+		.fail(function() {console.log( "The Instagram Feed has failed!" ); })
+		.always(function() {console.log( "The Instagram Call has been triggered!" ); });
 
-		jqxhr.complete( function() { console.log( "Completion!"); });
+		// Handle Ajax call to Commonthread Blog API
+		var commonthread__jqxhr = $.getJSON('http://commonthread.alternativeapparel.com/?json=get_recent_posts&count=10&callback=?', function(data) {
+			var commonthreadObject = data.posts;
+			$.each( commonthreadObject, function( i, item ) {
+				commonthreadImage = item.attachments[0].url;
+				commonthreadArray.push(commonthreadImage);
+			});
+		})
+		.done(function() {console.log( "Commonthread Blog has successfully loaded!" ); })
+		.fail(function() {console.log( "The Commonthread Blog Feed has failed!" ); })
+		.always(function() {console.log( "The Commonthread Blog has been triggered" ); });
 
-	});
+		instagram__jqxhr.complete( function() {
+			instagramFunction(instagramArray);
+		});
+		commonthread__jqxhr.complete( function() {
+			commonFunction(commonthreadArray);
+		});
+
+		var commonFunction = function(commonFeed) {
+			build__handlebars__socialfeed.commonthread(commonFeed);
+		};
+		var instagramFunction = function(instagramFeed) {
+			var HTML = Template({ instagrams: instagramArray });
+			var HTML__socialfeed = HTML;
+			build__handlebars__socialfeed.instagram(HTML__socialfeed);
+		};
+
+		var build__handlebars__socialfeed = {
+			instagram: function(feed){
+				return document.getElementById('pattern').innerHTML = feed;
+			},
+			commonthread: function(feed) {
+			},
+			build: function() {
+				return function() {
+					console.log("Builder");
+				};
+			}
+		};
+
+		build__handlebars__socialfeed.build();
+
+
+	})();
 
 });
 	
 </script>
-</body>

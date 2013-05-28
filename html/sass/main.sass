@@ -52,7 +52,7 @@ body
   +breakpoint(lap)
     width: em(1024px)
   +breakpoint(desk)
-    width: em(1280px)
+    width: 77em
   +breakpoint(giant)
     width: em(1680px)
 
@@ -60,7 +60,6 @@ body
   @extend %one-whole
   position: relative
   background-color: rgba(148,150,144, 1)
-  //height: 100%
   +trailing-border(1px)
   padding-bottom: 0
   border-color: #fff
@@ -97,3 +96,34 @@ body
 
 .image-overlay
   +opacity(.5)
+
+.grid
+  overflow: hidden
+  padding: 0.5em 0 0 0.5em
+  max-width: 76em
+  margin: 0 auto
+  li
+    padding: 0 0.5em 0.5em 0
+    > div
+      background: #808080
+      //padding: 7em 2em
+      text-align: center
+    a
+      color: #fff
+
+@media all and (min-width: 27em)
+  .grid li
+    width: 50%
+    float: left
+
+@media all and (min-width: 40em)
+  .grid li
+    width: 33.3333333%
+    &.wide
+      width: 66.666666%
+
+@media all and (min-width: 60em)
+  .grid li
+    width: 20%
+    &.wide
+      width: 50%
