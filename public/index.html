@@ -48,13 +48,17 @@
 	<section class="mod mod7 locations">
 		<p class="mod__title">Store Locations</p>
 	</section>
+	<div id="instafeed">
+		CLICK ME!
+	</div>
 </div>
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+<script src="js/instafeed.js"></script>
 <script src="js/magnific-popup.js"></script>
 <script src="js/main.js"></script>
-<script>
+<script type="text/javascript">
 $(document).ready(function(){
 
   $(".homepage").fitVids();
@@ -75,13 +79,23 @@ $(document).ready(function(){
 			$(this).removeClass("modal");
 		});
 	});
-	/*
-			$(document.body).on("click", function(){
-				$(".mod1__image").removeClass("video-overlay");
-				$(".mod1__image").find(".img").removeClass("image-overlay");
-				$(".mod1__video").removeClass("mod--hidden");
+
+	$("#instafeed").on("click", function(){
+
+		var jqxhr = $.getJSON('https://api.instagram.com/v1/users/20039202/media/recent/?access_token=34925449.f59def8.d3155ae948414c6e81d88de5a3bd7a16&callback=?', function(data) {
+			console.log(data.data);
+			var instagramObject = data.data;
+			$.each( instagramObject, function( i, item ) {
+				console.log( item.images.standard_resolution.url );
 			});
-			*/
+		})
+		.done(function() {console.log( "second success" ); })
+		.fail(function() {console.log( "FAIL!" ); })
+		.always(function() {console.log( "Always Execute" ); });
+
+		jqxhr.complete( function() { console.log( "Completion!"); });
+
+	});
 
 });
 	
