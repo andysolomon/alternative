@@ -1,9 +1,9 @@
 <head>
 <meta charset="utf-8">
-<title>Flat UI</title>
+<title>Alternative Homepage</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Loading Bootstrap -->
+<link href="https://raw.github.com/dimsemenov/Magnific-Popup/master/dist/magnific-popup.css" rel="stylesheet">
 <link href="css/main.css" rel="stylesheet">
 
 <!-- Loading Flat UI -->
@@ -18,18 +18,20 @@
 
 <div class="homepage">
 	<section class="mod mod1 seasonal">
-		<!--<p class="mod__title">Seasonal</p>-->
-		<p class="icon play-video"></p>
-		<p class="mod1__image"></p>
+		<div class="mod1__image">
+			<img class="img" src="https://images-na.ssl-images-amazon.com/images/I/A1IOP-ItaqL.png">
+		</div>
+		<div class="mod1__video mod--hidden">
+			<div class="fitvid">
+				<iframe
+				src="http://player.vimeo.com/video/45426593?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff"
+				width="500" height="281" frameborder="0" webkitAllowFullScreen
+				mozallowfullscreen allowFullScreen></iframe>
+			</div>
+		</div>
 	</section>
 	<section class="mod mod2 commonthread">
-		<!--<p class="mod__title">Common Thread</p>-->
-		<div class="fitvid">
-			<iframe
-			src="http://player.vimeo.com/video/45426593?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff"
-			width="500" height="281" frameborder="0" webkitAllowFullScreen
-			mozallowfullscreen allowFullScreen></iframe>
-		</div>
+		<p class="mod__title">Common Thread</p>
 	</section>
 	<section class="mod mod3 grantsprogram">
 		<p class="mod__title">Grants Program</p>
@@ -50,8 +52,38 @@
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+<script src="js/magnific-popup.js"></script>
 <script src="js/main.js"></script>
 <script>
+$(document).ready(function(){
+
   $(".homepage").fitVids();
+	var flag = false;
+
+	$(".mod1").on("click", ".mod1__image", function(e){
+		e.stopPropagation();
+		$(this).toggleClass('video-overlay');
+		$(this).find(".img").toggleClass('image-overlay');
+		$mod1 = $(this).parent();
+		$mod1.find(".mod1__video").toggleClass("mod--hidden");
+		flag = true;
+		$(document.body).addClass("modal");
+		$(".modal").on("click", function(){
+			$(".mod1__image").removeClass("video-overlay");
+			$(".mod1__image").find(".img").removeClass("image-overlay");
+			$(".mod1__video").addClass("mod--hidden");
+			$(this).removeClass("modal");
+		});
+	});
+	/*
+			$(document.body).on("click", function(){
+				$(".mod1__image").removeClass("video-overlay");
+				$(".mod1__image").find(".img").removeClass("image-overlay");
+				$(".mod1__video").removeClass("mod--hidden");
+			});
+			*/
+
+});
+	
 </script>
 </body>

@@ -98,13 +98,34 @@ $use-markup-fix: true !default
  * your classes (e.g. `.palm--one-half`), the second value is the media query
  * that the breakpoint fires at.
 
+ // iphone original     320 / 16 = 20em
  // palm     480 / 16 = 30em
- // lap(min) 481 / 16 = 30.0625em
- // lap(max) 1023 / 16 = 73.6501079914em
- // portable 1023 / 16 = 63.9375em
- // desk     1024 / 16 = 64em
+ // galaxy s2     480 / 16 = 30em
+ // portable 481 / 16 = 30.0625em
+ // galaxy tab 600 / 16 = 37.5em
 
-$breakpoints: "palm" "(max-width: 22em)",  "portable" "(min-width: 34em)", "desk" "(min-width: 51em)"
+ // iphone4s 640 / 16 = 40em
+ // galaxy s3 720 / 16 = 45em
+ // ipad mini 768 / 16 = 48em
+ // ipad 1&2 768 / 16 = 48em
+ // nexus 7 800 / 16 = 50em
+ // kindle fire hd 800 / 16 = 50em
+
+ // lap     1024 / 16 = 64em
+ // kindle fire hd 1200 / 16 = 75em
+ // mb 13" 1280 / 16 = 80em
+ // mb 15" 1440 / 16 = 90em
+ // ipad 3&4 1536 / 16 = 96em
+
+ // desk
+ // mb 15" hires 1680 / 16 = 105em
+ // mb 17" hires 1920 / 16 = 120em
+
+ // giant
+ // mb 13" retina 2560 / 16 = 160em
+ // mb 15" retina 2880 / 16 = 180em
+
+$breakpoints: "palm" "(max-width: 37.5em)",  "portable" "(min-width: 37.5em)", "lap" "(min-width: 64em)", "desk" "(min-width: 96em)", "giant" "(min-width: 120em)"
 
 /**
  * Define which namespaced breakpoints you would like to generate for each of

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* line 17, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../andrewsolomon/.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -21,45 +21,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../andrewsolomon/.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../andrewsolomon/.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../andrewsolomon/.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../andrewsolomon/.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../andrewsolomon/.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../andrewsolomon/.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../andrewsolomon/.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../andrewsolomon/.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -149,11 +149,32 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
  * your classes (e.g. `.palm--one-half`), the second value is the media query
  * that the breakpoint fires at.
  *
+ * // iphone original     320 / 16 = 20em
  * // palm     480 / 16 = 30em
- * // lap(min) 481 / 16 = 30.0625em
- * // lap(max) 1023 / 16 = 73.6501079914em
- * // portable 1023 / 16 = 63.9375em
- * // desk     1024 / 16 = 64em */
+ * // galaxy s2     480 / 16 = 30em
+ * // portable 481 / 16 = 30.0625em
+ * // galaxy tab 600 / 16 = 37.5em
+ *
+ * // iphone4s 640 / 16 = 40em
+ * // galaxy s3 720 / 16 = 45em
+ * // ipad mini 768 / 16 = 48em
+ * // ipad 1&2 768 / 16 = 48em
+ * // nexus 7 800 / 16 = 50em
+ * // kindle fire hd 800 / 16 = 50em
+ *
+ * // lap     1024 / 16 = 64em
+ * // kindle fire hd 1200 / 16 = 75em
+ * // mb 13" 1280 / 16 = 80em
+ * // mb 15" 1440 / 16 = 90em
+ * // ipad 3&4 1536 / 16 = 96em
+ *
+ * // desk
+ * // mb 15" hires 1680 / 16 = 105em
+ * // mb 17" hires 1920 / 16 = 120em
+ *
+ * // giant
+ * // mb 13" retina 2560 / 16 = 160em
+ * // mb 15" retina 2880 / 16 = 180em */
 /*
  * Define which namespaced breakpoints you would like to generate for each of
  * widths, push and pull. This is handy if you only need pull on, say, desk, or
@@ -184,7 +205,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
  * 1. Allow the grid system to be used on lists.
  * 2. Remove any margins and paddings that might affect the grid system.
  * 3. Apply a negative `margin-left` to negate the columns’ gutters. */
-/* line 164, ../../html/sass/_grids.sass */
+/* line 185, ../../html/sass/_grids.sass */
 .homepage {
   list-style: none;
   /* [1] */
@@ -221,8 +242,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
  * Our regular, non-responsive width classes. */
 /*
  * Whole */
-/* line 252, ../../html/sass/_grids.sass */
-.homepage, .mod, .mod1__image {
+/* line 273, ../../html/sass/_grids.sass */
+.homepage, .mod {
   width: 100%;
 }
 
@@ -244,7 +265,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
  * Twelfths */
 /*
  * Our responsive classes, if we have enabled them. */
-@media only screen and (max-width: 22em) {
+@media only screen and (max-width: 37.5em) {
   /*
    * Whole */
   /*
@@ -264,7 +285,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   /*
    * Twelfths */
 }
-@media only screen and (min-width: 34em) {
+@media only screen and (min-width: 64em) {
   /*
    * Whole */
   /*
@@ -284,7 +305,27 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   /*
    * Twelfths */
 }
-@media only screen and (min-width: 51em) {
+@media only screen and (min-width: 37.5em) {
+  /*
+   * Whole */
+  /*
+   * Halves */
+  /*
+   * Thirds */
+  /*
+   * Quarters */
+  /*
+   * Fifths */
+  /*
+   * Sixths */
+  /*
+   * Eighths */
+  /*
+   * Tenths */
+  /*
+   * Twelfths */
+}
+@media only screen and (min-width: 96em) {
   /*
    * Whole */
   /*
@@ -311,7 +352,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
  * Push classes, to move grid items over to the right by certain amounts. */
 /*
  * Not a particularly great selector, but the DRYest way to do things. */
-/* line 504, ../../html/sass/_grids.sass */
+/* line 525, ../../html/sass/_grids.sass */
 [class*="push--"] {
   position: relative;
 }
@@ -334,7 +375,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
  * Tenths */
 /*
  * Twelfths */
-@media only screen and (max-width: 22em) {
+@media only screen and (max-width: 37.5em) {
   /*
    * Whole */
   /*
@@ -354,7 +395,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   /*
    * Twelfths */
 }
-@media only screen and (min-width: 34em) {
+@media only screen and (min-width: 64em) {
   /*
    * Whole */
   /*
@@ -374,7 +415,27 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   /*
    * Twelfths */
 }
-@media only screen and (min-width: 51em) {
+@media only screen and (min-width: 37.5em) {
+  /*
+   * Whole */
+  /*
+   * Halves */
+  /*
+   * Thirds */
+  /*
+   * Quarters */
+  /*
+   * Fifths */
+  /*
+   * Sixths */
+  /*
+   * Eighths */
+  /*
+   * Tenths */
+  /*
+   * Twelfths */
+}
+@media only screen and (min-width: 96em) {
   /*
    * Whole */
   /*
@@ -406,52 +467,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   box-sizing: border-box;
 }
 
-/* line 61, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 61, ../../../../../andrewsolomon/.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 * html {
   font-size: 100%;
 }
 
-/* line 64, ../../../../.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 64, ../../../../../andrewsolomon/.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 16px;
   line-height: 1.5em;
 }
 
-/* line 27, ../../html/sass/main.sass */
-body {
-  font-family: "Apercu";
-}
-
-/* line 30, ../../html/sass/main.sass */
-.homepage {
-  margin: 0 auto;
-}
-@media (min-width: 64em) {
-  /* line 30, ../../html/sass/main.sass */
-  .homepage {
-    width: 64em;
-  }
-}
-
-/* line 37, ../../html/sass/main.sass */
-.mod {
-  position: relative;
-  background-color: #949690;
-  height: 100%;
-  border-bottom-style: solid;
-  border-bottom-width: 0.0625em;
-  padding-bottom: 1.4375em;
-  padding-bottom: 0;
-  border-color: white;
-  display: table;
-}
-/* line 46, ../../html/sass/main.sass */
-.mod:nth-child(even) {
-  background-color: #a7a9a2;
-}
-
-/* line 49, ../../html/sass/main.sass */
-.mod__title, .mod1 .play-video {
+/* line 33, ../../html/sass/main.sass */
+.mod__title {
   font-size: 1.5em;
   letter-spacing: 0.15em;
   display: table-cell;
@@ -461,31 +489,93 @@ body {
   text-transform: uppercase;
 }
 
-/* line 62, ../../html/sass/main.sass */
-.mod1 .play-video {
+/* line 42, ../../html/sass/main.sass */
+body {
+  font-family: "Apercu";
+}
+
+/* line 45, ../../html/sass/main.sass */
+.homepage {
+  margin: 0 auto;
+}
+@media (min-width: 30em) {
+  /* line 45, ../../html/sass/main.sass */
+  .homepage {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+@media (min-width: 64em) {
+  /* line 45, ../../html/sass/main.sass */
+  .homepage {
+    width: 64em;
+  }
+}
+@media (min-width: 96em) {
+  /* line 45, ../../html/sass/main.sass */
+  .homepage {
+    width: 80em;
+  }
+}
+@media (min-width: 120em) {
+  /* line 45, ../../html/sass/main.sass */
+  .homepage {
+    width: 105em;
+  }
+}
+
+/* line 59, ../../html/sass/main.sass */
+.mod {
   position: relative;
-  z-index: 1;
-  cursor: pointer;
+  background-color: #949690;
+  border-bottom-style: solid;
+  border-bottom-width: 0.0625em;
+  padding-bottom: 1.4375em;
+  padding-bottom: 0;
+  border-color: white;
+  display: table;
 }
-/* line 67, ../../html/sass/main.sass */
-.mod1 .play-video:after {
-  content: url("https://images-na.ssl-images-amazon.com/images/I/21FenRrW5mL.png");
+/* line 68, ../../html/sass/main.sass */
+.mod:nth-child(even) {
+  background-color: #a7a9a2;
 }
 
-/* line 70, ../../html/sass/main.sass */
+/* line 74, ../../html/sass/main.sass */
 .mod1__image {
-  left: 0;
-  top: 0;
   position: absolute;
-  z-index: 0;
-  background-image: url("https://images-na.ssl-images-amazon.com/images/I/A1TbrToIIAL.png");
-  background-repeat: no-repeat;
-  background-position: top left;
+  z-index: 1;
 }
 
-/* line 82, ../../html/sass/main.sass */
+/* line 78, ../../html/sass/main.sass */
+.mod1__video {
+  padding: 1.5em;
+}
+
+/* line 81, ../../html/sass/main.sass */
+.mod--hidden {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+/* line 84, ../../html/sass/main.sass */
+.img {
+  max-width: 100%;
+  height: auto !important;
+}
+
+/* line 88, ../../html/sass/main.sass */
 .fitvid {
   height: 100%;
-  padding-top: 2em;
-  padding-bottom: 2em;
+}
+
+/* line 91, ../../html/sass/main.sass */
+.video-overlay {
+  background: black;
+  z-index: 0;
+}
+
+/* line 95, ../../html/sass/main.sass */
+.image-overlay {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
 }
