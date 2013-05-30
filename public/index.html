@@ -96,6 +96,10 @@ $(document).ready(function(){
 	});
 
 	(function(){
+		
+		$.getJSON('js/commonthreadfeed.json', function(data) {
+			console.log(data);
+		});
 		var commonthreadArray = [];
 		var instagramArray = [];
 		var Source = document.getElementById("Handlebars-Template").textContent;
